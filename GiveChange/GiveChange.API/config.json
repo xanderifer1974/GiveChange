@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "GiveChangeDB": "server=localhost;uid=root;pwd=duda0107;database=GiveChangeDB"
+  }
+}
