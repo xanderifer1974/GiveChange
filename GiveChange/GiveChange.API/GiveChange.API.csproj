@@ -17,4 +17,10 @@
     <ProjectReference Include="..\GiveChange.Infra.Data\GiveChange.Infra.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
