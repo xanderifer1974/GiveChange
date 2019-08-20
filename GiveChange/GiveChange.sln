@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GiveChange.Infra.Data", "Gi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GiveChange.API", "GiveChange.API\GiveChange.API.csproj", "{FD7B54BB-9A28-402B-A99B-640DDFF1ED92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteDarTroco", "TesteDarTroco\TesteDarTroco.csproj", "{182036BC-1975-4A89-A8E3-C767D8483629}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{FD7B54BB-9A28-402B-A99B-640DDFF1ED92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD7B54BB-9A28-402B-A99B-640DDFF1ED92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD7B54BB-9A28-402B-A99B-640DDFF1ED92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{182036BC-1975-4A89-A8E3-C767D8483629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{182036BC-1975-4A89-A8E3-C767D8483629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{182036BC-1975-4A89-A8E3-C767D8483629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{182036BC-1975-4A89-A8E3-C767D8483629}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{B57C6C4C-E1D8-4962-B963-DF5422C845AA} = {CC5F4CAE-F571-4F95-8363-FE6C7921CDB2}
 		{1CC51D86-C38D-4D2B-9A8D-8DB7E8244C95} = {B57C6C4C-E1D8-4962-B963-DF5422C845AA}
 		{FD7B54BB-9A28-402B-A99B-640DDFF1ED92} = {806E818F-0CD4-4CA9-B564-956A73F0442E}
+		{182036BC-1975-4A89-A8E3-C767D8483629} = {9649F72A-CF2B-4611-9825-6D34DA8C9D55}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4298202A-A239-4E06-B0A8-19E8A5CA3317}
