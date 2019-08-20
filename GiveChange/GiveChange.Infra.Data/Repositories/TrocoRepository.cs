@@ -8,6 +8,8 @@ namespace GiveChange.Infra.Data.Repositories
     {
         public TrocoRepository(GiveChangeContext giveChangeContext) : base(giveChangeContext)
         {
-        }
+        }        
+       
+
     }
 }

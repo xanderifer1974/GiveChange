@@ -65,6 +65,9 @@ namespace GiveChange.API.Controllers
 
             try
             {
+                decimal valorTroco = troco.ValorPago - troco.PrecoProduto;
+
+                troco.ValorTroco = valorTroco;
 
                 _trocoRepository.Adicionar(troco);
                 return Created("api/troco", troco);
