@@ -3,7 +3,7 @@ using GiveChange.Infra.Data.Context;
 using GiveChange.Infra.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,18 +12,18 @@ namespace GiveChange.API
 {
     public class Startup
     {
-        IConfiguration Configuration { get; set; }
-
         public Startup(IConfiguration configuration)
         {
             var builder = new ConfigurationBuilder().AddJsonFile("config.json");
             Configuration = builder.Build();
         }
 
+        public IConfiguration Configuration { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
             var conn = Configuration.GetConnectionString("GiveChangeDB");
             services.AddDbContext<GiveChangeContext>(option => option.UseLazyLoadingProxies()
                                 .UseMySql(conn, m => m.MigrationsAssembly("GiveChange.Infra.Data")));
@@ -31,7 +31,7 @@ namespace GiveChange.API
             //Configuracao da Controller TrocoController
             services.AddScoped<ITrocoRepository, TrocoRepository>();
 
-            //services.AddMvcCore();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,11 +41,13 @@ namespace GiveChange.API
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.Run(async (context) =>
+            else
             {
-                await context.Response.WriteAsync("Hello World!");
-            });
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseMvc();
         }
     }
 }
