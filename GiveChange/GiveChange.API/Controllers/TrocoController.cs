@@ -76,7 +76,7 @@ namespace GiveChange.API.Controllers
                 m05 = 0;
                 m1 = 0;
 
-                double valorTroco = troco.ValorPago - troco.PrecoProduto;
+                decimal valorTroco = troco.ValorPago - troco.PrecoProduto;
                 troco.ValorTroco = valorTroco;
 
                 while (valorTroco >= 100)
@@ -103,28 +103,28 @@ namespace GiveChange.API.Controllers
                     t10++;
                 }
 
-                while (valorTroco >= 0.50)
+                while (valorTroco >= Convert.ToDecimal(0.50))
                 {
-                    valorTroco -= 0.50;
+                    valorTroco -= Convert.ToDecimal(0.50);
                     m50++;
                 }
 
-                while (valorTroco >= 0.10)
+                while (valorTroco >= Convert.ToDecimal(0.10))
                 {
-                    valorTroco -= 0.10;
+                    valorTroco -= Convert.ToDecimal(0.10);
                     m10++;
                 }
 
-                while (valorTroco >= 0.05)
+                while (valorTroco >= Convert.ToDecimal(0.05))
                 {
-                    valorTroco -= 0.05;
+                    valorTroco -= Convert.ToDecimal(0.05);
                     m05++;
                 }
 
 
-                while (valorTroco >= 0.01)
+                while (valorTroco >= Convert.ToDecimal(0.01))
                 {
-                    valorTroco -= 0.01;
+                    valorTroco -= Convert.ToDecimal(0.01);
                     m1++;
                 }
 
