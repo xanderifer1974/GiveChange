@@ -4,9 +4,9 @@
     {
         public int Id { get; private set; }
         public string NomeProduto { get; set; }
-        public decimal PrecoProduto { get; set; }
-        public decimal ValorPago { get; set; }
-        public decimal ValorTroco { get; set; }
+        public double PrecoProduto { get; set; }
+        public double ValorPago { get; set; }
+        public double ValorTroco { get; set; }
         public int Nota100 { get; set; }
         public int Nota50 { get; set; }
         public int Nota20 { get; set; }

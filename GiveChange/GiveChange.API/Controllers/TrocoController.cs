@@ -65,9 +65,110 @@ namespace GiveChange.API.Controllers
 
             try
             {
-                decimal valorTroco = troco.ValorPago - troco.PrecoProduto;
+                int t100, t50, t20, t10, m50, m10, m05, m1;              
 
+                t100 = 0;
+                t50 = 0;
+                t20 = 0;
+                t10 = 0;
+                m50 = 0;
+                m10 = 0;
+                m05 = 0;
+                m1 = 0;
+
+                double valorTroco = troco.ValorPago - troco.PrecoProduto;
                 troco.ValorTroco = valorTroco;
+
+                while (valorTroco >= 100)
+                {
+                    valorTroco -= 100;
+                    t100++;
+                }
+
+                while (valorTroco >= 50)
+                {
+                    valorTroco -= 50;
+                    t50++;
+                }
+
+                while (valorTroco >= 20)
+                {
+                    valorTroco -= 20;
+                    t20++;
+                }
+
+                while (valorTroco >= 10)
+                {
+                    valorTroco -= 10;
+                    t10++;
+                }
+
+                while (valorTroco >= 0.50)
+                {
+                    valorTroco -= 0.50;
+                    m50++;
+                }
+
+                while (valorTroco >= 0.10)
+                {
+                    valorTroco -= 0.10;
+                    m10++;
+                }
+
+                while (valorTroco >= 0.05)
+                {
+                    valorTroco -= 0.05;
+                    m05++;
+                }
+
+
+                while (valorTroco >= 0.01)
+                {
+                    valorTroco -= 0.01;
+                    m1++;
+                }
+
+                if (t100 > 0)
+                {
+                    troco.Nota100 = t100;
+                }
+
+                if (t50 > 0)
+                {
+                    troco.Nota50 = t50;
+                }
+
+                if (t20 > 0)
+                {
+                    troco.Nota20 = t20;
+                }
+
+                if (t10 > 0)
+                {
+                    troco.Nota10 = t10;
+                }
+
+                if (m50 > 0)
+                {
+                    troco.Moeda050 = m50;
+                }
+
+                if (m10 > 0)
+                {
+                    troco.Moeda010 = m10;
+                }
+
+                if (m05 > 0)
+                {
+                    troco.Moeda005 = m05;
+                }
+
+                if (m1 > 0)
+                {
+                    troco.Moeda001 = m1;
+                }
+
+
 
                 _trocoRepository.Adicionar(troco);
                 return Created("api/troco", troco);
