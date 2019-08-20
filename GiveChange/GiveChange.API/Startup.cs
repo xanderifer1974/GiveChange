@@ -1,4 +1,6 @@
-﻿using GiveChange.Infra.Data.Context;
+﻿using GiveChange.Domain.Interfaces.Repositories;
+using GiveChange.Infra.Data.Context;
+using GiveChange.Infra.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,7 +27,11 @@ namespace GiveChange.API
             var conn = Configuration.GetConnectionString("GiveChangeDB");
             services.AddDbContext<GiveChangeContext>(option => option.UseLazyLoadingProxies()
                                 .UseMySql(conn, m => m.MigrationsAssembly("GiveChange.Infra.Data")));
-            services.AddMvcCore();
+
+            //Configuracao da Controller TrocoController
+            services.AddScoped<ITrocoRepository, TrocoRepository>();
+
+            //services.AddMvcCore();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
