@@ -7,6 +7,14 @@
         public decimal PrecoProduto { get; set; }
         public decimal ValorPago { get; set; }
         public decimal ValorTroco { get; set; }
+        public int Nota100 { get; set; }
+        public int Nota50 { get; set; }
+        public int Nota20 { get; set; }
+        public int Nota10 { get; set; }
+        public int Moeda050 { get; set; }
+        public int Moeda010 { get; set; }
+        public int Moeda005 { get; set; }
+        public int Moeda001 { get; set; }   
 
         public override void Validate()
         {
